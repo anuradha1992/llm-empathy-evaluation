@@ -1,0 +1,21 @@
+conv_id,emotion,situation,utterance
+hit:4870_conv:9740,lonely,Its a beautiful day outside today.  Problem is that I have no one to share it with. ,It is such a gorgeous day outside today.  The problem is that I have no one to share it with.
+hit:4870_conv:9740,lonely,Its a beautiful day outside today.  Problem is that I have no one to share it with. ,It is a gorgeous day where I live too! I'm sorry you don't have anyone to share it with!  Do you have plans later?
+hit:5925_conv:11850,lonely,My best friend and I had been roommates all through college. We each moved out on our own over the summer. I miss her.,My best friend and I had been roommates all through college.
+hit:5925_conv:11850,lonely,My best friend and I had been roommates all through college. We each moved out on our own over the summer. I miss her.,That's pretty nice. I'm in college_comma_ and I've had three different roommates so far_comma_ having to move three different times. Starting to get old. You truly lucked out!
+hit:7835_conv:15671,excited,I'm so ready to go home. I can hardly wait!,I haven't been home in so long. I am so ready to go home and see my family. 
+hit:7835_conv:15671,excited,I'm so ready to go home. I can hardly wait!,I bet_comma_ I get home sickness even if I'm gone a couple day.  I bet they are happy to see you as well!
+hit:3595_conv:7190,surprised,I found a giant spider in my car yesterday! It scared me!,I saw a huge spider in my car yesterday. I scared me so!
+hit:3595_conv:7190,surprised,I found a giant spider in my car yesterday! It scared me!,That is frightening! especially if you didn't know whether it was a harmful spider or not! What did you do?
+hit:11116_conv:22233,trusting,One time an international student I was friends with wanted to practice driving with my car. I let him borrow  my car because I believed he wouldn't get in any accidents,I let my friend borrow my car. He's an international student and only has a permit.
+hit:11116_conv:22233,trusting,One time an international student I was friends with wanted to practice driving with my car. I let him borrow  my car because I believed he wouldn't get in any accidents,Wow you are very trusting_comma_ I do not think I would allow a friend to borrow my car. Is it legal for him to drive with just a permit? 
+hit:4062_conv:8124,surprised,My parents surprised me with a trip up to see me for 4 days.  I was so shocked and am so happy they are here!,My parents surprised me with a trip up to see me for 4 days. I was so shocked and am so happy they are here!
+hit:4062_conv:8124,surprised,My parents surprised me with a trip up to see me for 4 days.  I was so shocked and am so happy they are here!,That's wonderful! I love those 'surprise visit' occassions. Sadly my parents would need to fly across the country to do that and it's just not feasible given my work schedule
+hit:1530_conv:3061,confident,I went into my final exams feeling great. With my emotion of feeling great i did the same for my exams.,So i love feeling great when i walk into exams because i actually studied.
+hit:1530_conv:3061,confident,I went into my final exams feeling great. With my emotion of feeling great i did the same for my exams.,I know how that goes.  It can be hard to stay on track at the end of the semester.
+hit:3059_conv:6119,annoyed,I wanted to make beef wellington but the gorcery store didn't have english mustard.,I wanted to make beef wellington but the gorcery store didn't have english mustard.
+hit:3059_conv:6119,annoyed,I wanted to make beef wellington but the gorcery store didn't have english mustard.,Oh no_comma_ must be disappointing. Are you putting off making it now or will you go in search for the missing mustard?
+hit:6049_conv:12098,joyful,I get to go home in 30 minutes!,I get to go home in 30 minutes!
+hit:6049_conv:12098,joyful,I get to go home in 30 minutes!,Yay!  I love the end of the work day!  What are you going to do when you get home?
+hit:11780_conv:23561,disappointed,When I found out my son decided to drop out of college.,Last month I found out my son decided to drop out of college without telling me.
+hit:11780_conv:23561,disappointed,When I found out my son decided to drop out of college.,Oh no that sounds terrible. Hopefully it's not as bad as some of those stories I have read about where they go so far that they fake having the degree.

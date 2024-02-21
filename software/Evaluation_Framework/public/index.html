@@ -1,0 +1,1605 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Dialogue Response Evaluation</title>
+  </head>
+  <body>
+
+    <div id="root" style="height: 100%"></div>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Examples</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body">
+              <div id="description">
+                
+                <p>The following are the defitions of <span class="advise-with">"Advise with permission"</span> and <span class="advise-without">"Advise without permission"</span> as per the Motivational Interviewing Treatment Intergrity code versions 2.0 (<a href="https://casaa.unm.edu/download/miti.pdf" target="_blank">MITI 2.0</a>) and 4.2.1 (<a href="https://casaa.unm.edu/download/miti4_2.pdf" target="_blank">MITI 4.2.1</a>)</p>
+
+                <!-- <div class="tutorial-topic"><b>MI Adherent Behavior Codes:</b></div> -->
+
+                <div style="border-color:#66BB6A" class="tutorial-msg">
+                  <div style="background-color:#66BB6A" class="tutorial-strip">
+                    <b>Advise with Permission</b>
+                  </div>
+                  <div class="tutorial-body">
+                    Asking permission before giving advice or asking what the distressed person already knows or has already been told about a topic before giving advice.
+                    Indirect forms of permission can also occur, such as when the supporter invites the distressed person to disregard the advice as appropriate.
+                    <br></br>
+                    This type of sentences mostly includes phrases such as:
+                    <br></br>
+                    <ul>
+                      <li class="phrases">It maybe helpful to</li>
+                      <li class="phrases">I would encourage you to</li>
+                      <li class="phrases">You may want to</li>
+                      <li class="phrases">It would be a good idea to</li>
+                      <li class="phrases">Perhaps you can</li>
+                      <li class="phrases">It may be important to </li>
+                      <li class="phrases">I wonder if you can </li>
+                      <li class="phrases">An option would be to</li>
+                      <li class="phrases">can help you to</li>
+                      <li class="phrases">able to help you</li>
+                      <li class="phrases">Would be helpful</li>
+                      <li class="phrases">might help you</li>
+                      <li class="phrases">you may find helpful </li>
+                      <li class="phrases">You may want to consider </li>
+                      <li class="phrases">You may consider</li>
+                      <li class="phrases">I would recommend</li>
+                      <li class="phrases">If you would like</li>
+                      <li class="phrases">can be a great way </li>
+                      <li class="phrases">if you would like</li>
+                      <li class="phrases">I wonder if you can consider</li>
+                    </ul>
+                    Examples of giving advise with permission (The phrases indicative of "Advise with permission" are highlighted in bold):
+                    <br></br>
+                    <ul>
+                      <li class="tutorial-example">"<b>If you agree with it,</b> we could try to brainstorm some ideas that might help you"</li>
+                      <li class="tutorial-example">"I have some information about how to reduce your risk of colon cancer and <b>I wonder if I might discuss it with you.</b>"</li>
+                      <li class="tutorial-example">"<b>This may not be the right thing for you, but</b> some of my clients have had good luck setting the alarm on their wristwatch to help them remember to check their blood sugars 2 hours after lunch."</li>
+                      <li class="tutorial-example"><b>I would encourage you to</b> take the next step and reach out to a professional you can trust and build rapport with by co-journeying through whatever concerns you have</li>
+                      <li class="tutorial-example">When those fights do come up, <b>perhaps it's a good idea to</b> back off a bit, maybe both of you write down your thoughts, and then come back to talk.</li>
+                      <li class="tutorial-example"><b>Perhaps, if you feel like it,</b> you might make a post addressing this topic on /r/askmen.</li>
+                      <li class="tutorial-example">If  he is willing, <b>I wonder if</b> there may be a depression support group in your area such as NAMI or DBSA where he could hear from from others living with depression and their families.</li>
+                      <li class="tutorial-example"><b>You may want to consider</b> the purchase of a S. A. D.  Light.</li>
+                      <li class="tutorial-example"><b>Its possible that you could</b> look for similar situations and see if anyone catches your interest to know as a friend.</li>
+                      <li class="tutorial-example"><b>If you are up for it, perhaps</b> the best place to start is by seeing a physician or a therapist who can help determine how severe the depression is</li>
+                      <li class="tutorial-example"><b>It would be a good idea to</b> talk with them about it so you feel more at ease.</li>
+                      <li class="tutorial-example"><b>Maybe you need</b> more time to reflect and organize your thoughts.</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                
+
+                <!-- <div class="tutorial-topic"><b>MI Non-Adherent Behaviour Codes:</b></div> -->
+
+                <div style="border-color:#F06292" class="tutorial-msg">
+                  <div style="background-color:#F06292" class="tutorial-strip">
+                    <b>Advise without Permission</b>
+                  </div>
+                  <div class="tutorial-body">
+                    Making suggestions, offering solutions or possible actions without first obtaining permission from the distressed person. 
+                    <br></br>
+                    This type of sentences mostly includes phrases such as:
+                    <br></br>
+                    <ul>
+                      <li class="phrases">You should</li>
+                      <li class="phrases">You could</li>
+                      <li class="phrases">Why don’t you</li>
+                      <li class="phrases">Consider</li>
+                      <li class="phrases">Try</li>
+                      <li class="phrases">I suggest</li>
+                      <li class="phrases">I advise you to</li>
+                    </ul>
+                    Examples of advising without permission (The phrases indicative of "Advise without permission" are highlighted in bold):
+                    <br></br>
+                    <ul>
+                      <li class="tutorial-example">"<b>You should</b> simply scribble a note that reminds you to turn the computer off during breaks"</li>
+                      <li class="tutorial-example">"<b>What about</b> trying to get a ride from a friend?"</li>
+                      <li class="tutorial-example">"<b>Checking</b> your blood sugar five times a day is best in the beginning"</li>
+                      <li class="tutorial-example">"<b>It worked for me and it will work for you</b> if you give it a try. <b>We need to</b> find the right AA meeting for you. You just didn’t find a good one."</li>
+                      <li class="tutorial-example"><b>You shouldn't</b> feel guilty over who you want to date.</li>
+                      <li class="tutorial-example"><b>Try to</b> celebrate the little victories.</li>
+                      <li class="tutorial-example"><b>Don't be</b> afraid of not always knowing how you are supposed to feel.</li>
+                      <li class="tutorial-example"><b>You need to</b> find a counsellor you can trust, which definitely makes a huge difference.</li>
+                      <li class="tutorial-example">But most importantly, <b>you two need to</b> get together and talk things through.</li>
+                      <li class="tutorial-example">I know this sounds a bit unrealistic from your point of view, but trust me, <b>ditch</b> your friends.</li>
+                      <li class="tutorial-example"><b>Think</b> about your hobbies, the things you like to do, and <b>find</b> someone or a community who also likes those things.</li>
+                      <li class="tutorial-example"><b>I suggest</b> that she see a therapist on her own in order to better understand and cope with her anxiety and depression, especially given her suicidal thoughts.</li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+          </div>
+          
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="googlebtnsubmit" data-dismiss="modal">Close</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <script>
+    $( function() {
+        $( "ul.droptrue" ).sortable({
+            connectWith: "ul"
+        });
+        $( "#sortable2, #sortable3, #sortable4" ).sortable({
+            cancel: ".ui-state-disabled"
+        });
+        $( "#sortable1, #sortable2, #sortable3, #sortable4" ).disableSelection();
+    });
+    </script>
+
+  </body>
+
+
+</html>
+
+
+<style>
+  html, body {
+    height: 100%;
+    background-color: rgb(240, 235, 248);
+  }
+
+  .min-100 {
+      min-height: 100%;
+  }
+  .container {
+    /*height: 100%;
+    display: block;
+    overflow: auto;*/
+
+    margin: auto;
+    max-width: 90vw;
+    width: 740px;
+    /*width: 50%;*/
+
+    margin-top: 12px;
+    background-color: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 24px;
+    padding-top: 22px;
+    position: relative;
+  }
+  .required-container {
+    margin: auto;
+    max-width: 90vw;
+    width: 640px;
+
+    margin-top: 12px;
+    background-color: #fff;
+    border: 1px solid rgb(217, 48, 37);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 24px;
+    padding-top: 22px;
+    position: relative;
+  }
+
+  .radiotable {
+    width: 100%;
+  }
+
+  .rateradio {
+    margin: 10px;
+    /*margin: 10px;
+    height: 20px;
+    width: 20px;*/
+  }
+
+  /* --------- start radio button --------- */
+
+  input[type='radio'] {
+      /* add margin here of If you want */
+      width: 20px;
+      height: 20px;
+      border: 2px solid #747474;
+      border-radius: 50%;
+      outline: none;
+      opacity: 0.6;
+      transition: 0.3s;
+      cursor: pointer;
+  }
+  input[type='radio']:hover:before {
+      box-shadow: 0px 0px 0px 12px rgba(80, 80, 200, 0.2); /* control thickens on border here */
+      border-radius: 50%;
+      opacity: 1;
+  }
+  input[type='radio']:before {
+      content: '';
+      display: block;
+      width: 100%; /* outside border*/
+      height: 100%; /* for outside border */
+      border-radius: 50%;
+      transition:.3s; /* for animation*/
+  }
+  input[type='radio']:checked:before {
+      background: #683ab7;
+  }
+
+  /*input[type='radio'] {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      outline: none;
+      border: 3px solid gray;
+      cursor: pointer;
+  }
+
+  input[type='radio']:before {
+      content: '';
+      display: block;
+      width: 60%;
+      height: 60%;
+      margin: 20% auto;
+      border-radius: 50%;
+  }
+
+input[type="radio"]:checked:before {
+      background: #683ab7;
+      
+  }
+  
+  input[type="radio"]:checked {
+    border-color:#683ab7;
+  }
+
+  .role {
+      margin-right: 80px;
+      margin-left: 20px;
+      font-weight: normal;
+  }
+
+  .checkbox label {
+      margin-bottom: 20px !important;
+  }
+
+  .roles {
+      margin-bottom: 40px;
+  }*/
+
+  /* ------------ end radio button -------- */
+
+  .desc-div {
+    padding: 20px;
+    border-radius: 20px;
+    border:1px solid lightgray;
+  }
+
+  .modal-dialog{
+    max-width: 700px;
+    overflow-y: initial !important
+  }
+  .modal-body{
+      height: 550px;
+      overflow-y: auto;
+  }
+  .instruction-modal-body {
+    height: 250px;
+  }
+  .btn-container {
+    margin: auto;
+    margin-top: 12px;
+    max-width: 90vw;
+    width: 740px;
+    padding: 0;
+    /*padding-bottom: 20px;*/
+    display: block;
+    /*margin-bottom: 12px;*/
+    /*text-align: right;
+    float: right;*/
+  }
+
+  .modal-header {
+    background-color: rgb(103, 58, 183);
+    color: rgba(255, 255, 255);
+  }
+
+  /* ------- Modal styles ------- */
+
+  .submit-modal {
+  }
+  .success-modal {
+  }
+  .error-modal {
+  }
+
+  .submit-modal-content {
+  }
+  .success-modal-content {
+  }
+  .error-modal-content {
+  }
+
+
+  .submit-header {
+  }
+  .success-header {
+    background: #43a047;
+  }
+  .error-header {
+    background: #e91e63;
+  }
+
+  .submit-body {
+    height: 100px;
+  }
+  .success-body {
+    height: 240px;
+  }
+  .error-body {
+    height: 100px;
+  }
+
+  .submit-footer {
+  }
+  .success-footer {
+  }
+  .error-footer {
+  }
+
+
+  /* ------- End of modal styles ------- */
+
+  .advise-with {
+    color: #43a047;
+    font-weight: 700;
+  }
+
+  .advise-without {
+    color: #e91e63;
+    font-weight: 700;
+  }
+
+  /*.example-case {
+    background: lightpink;
+    padding: 10px;
+    margin-bottom: 10px;
+  }*/
+
+  .strip {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: rgb(103, 58, 183);
+    color: rgba(255, 255, 255, 1);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 10px;
+    left: -1px;
+    position: absolute;
+    top: -1px;
+    width: calc(100% + 2px);
+    display: block;
+  }
+  
+  .close {
+    background-color: rgb(103, 58, 183);
+    color: rgba(255, 255, 255);
+  }
+  .close:hover {
+    background-color: rgb(103, 58, 183);
+    color: #cccccc;
+  }
+
+  .survey-radio-label {
+    text-align: center;
+    width: 20%;
+  }
+  .survey-radio {
+    text-align: center;
+  }
+
+  .survey-div {
+    padding: 20px;
+    border-radius: 20px;
+    /*border: 1px solid #d3d3d3;*/
+    margin-bottom: 20px;
+    background-color: #efe6ff;
+  }
+
+  .strip-2 {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: rgb(103, 58, 183);
+    -webkit-box-align: center;
+    color: rgba(255, 255, 255);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 20px;
+    left: -1px;
+    position: absolute;
+    top: -1px;
+    width: calc(100% + 2px);
+    display: block;
+
+    align-items:center;
+    display:flex;
+    flex-grow:1;
+    font-family:Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    height:48px;
+    justify-content:space-between;
+    min-width:0%;
+    overflow-wrap:break-word;
+    padding-bottom:12px;
+    padding-left:24px;
+    padding-right:24px;
+    padding-top:12px;
+    -webkit-box-align:center;
+    -webkit-box-flex:1;
+    -webkit-box-pack:justify;
+  }
+  .tutorial-des {
+    margin-top: 48px;
+    height: 550px;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y:scroll;
+  }
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
+  .question_title {
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .1px;
+    line-height: 24px;
+    color: #202124;
+    font-weight: 400;
+    width: 100%;
+    word-break: break-word;
+  }
+  .star {
+    color: #d93025
+  }
+  .googletext {
+    width: 50%;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    outline: none;
+    padding-bottom: 8px;
+    color: #202124;
+    height: 40px;
+    position: relative;
+    vertical-align: top;
+    display: flex;
+    position: relative;
+    top: 14px;
+    display: flex;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0%;
+    position: relative;
+  }
+  .googlenametext {
+    width: 50%;
+    -webkit-tap-highlight-color: transparent;
+    padding-bottom: 8px;
+    height: 40px;
+  }
+  .my-form-control {
+    /* display: block; */
+    /* width: 100%; */
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .35rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.question-section {
+  /*margin-top: 48px;*/
+}
+.no-margin {
+  margin-bottom: 0px;
+}
+  .name::placeholder{
+    font-family: Roboto,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 20px;
+    color: #70757a;
+    opacity: 1; /* Firefox */
+  }
+  .container h1 {
+    text-align: center;
+  }
+  .question-breadcrumb {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    /* background-color: #e9ecef; */
+    border-radius: 0.25rem;
+    padding-left: 0;
+  }
+  .question-breadcrumb-item {
+    background: green;
+  }
+  .header-container {
+    /*text-align: center;*/
+    /*width: 100%; 
+    margin-bottom: 30px*/
+
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 40px;
+    color: #202124;
+    line-height: 135%;
+    max-width: 100%;
+    min-width: 0%;
+    text-align: center;
+  }
+  .breadcrumb-out {
+    
+  }
+  .breadcrumb-item {
+
+  }
+  .root-container {
+    font-family: Roboto,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 20px;
+    color: #202124;
+    margin-top: 12px;
+  }
+  .modal-body .root-container {
+    margin-top: 0px;
+    font-size: 18px;
+  }
+  .option-label {
+    font-family: Roboto,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 20px;
+    color: #202124;
+  }
+  .question-label {
+    font-family: Roboto,Arial,sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 20px;
+    color: lightgray;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+  .last-turn {
+    padding: 10px;
+    background-color: rgb(240, 235, 248);
+    border: 1px solid rgb(103, 58, 183, 1);
+    border-radius: 8px;
+  }
+  .tutorial-des .cat {
+    background-color: rgb(240, 235, 248);
+    border: 1px solid rgb(103, 58, 183, 1);
+    border-radius: 8px;
+    padding: 8px;
+  }
+  .modal-body .cat {
+    background-color: rgb(240, 235, 248);
+    border: 1px solid rgb(103, 58, 183, 1);
+    border-radius: 8px;
+    padding: 8px;
+  }
+  .turnul {
+    list-style-type: "→ ";
+    /*list-style-type: ">> ";*/
+  }
+  .turn {
+    color: rgb(103, 58, 183, 1);
+    font-weight: 200;
+    font-style: italic;
+  }
+  .question-para {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  .googlebtnradio {
+    font-family: Roboto,Arial,sans-serif;
+    background-color: #fff;
+    color: rgb(103, 58, 183);
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.141), 0 1px 3px 0 rgba(0,0,0,0.122);
+    -webkit-font-smoothing: antialiased;
+    transition: background .1s .05s;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .25px;
+    line-height: 36px;
+    text-decoration: none;
+    text-transform: none;
+    min-width: auto;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 0;
+    padding: 0 15px;
+  }
+  .googlebtn {
+    font-family: Roboto,Arial,sans-serif;
+    background-color: #fff;
+    margin-right: 14px;
+    color: rgb(103, 58, 183);
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.141), 0 1px 3px 0 rgba(0,0,0,0.122);
+    -webkit-font-smoothing: antialiased;
+    transition: background .1s .05s;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .25px;
+    line-height: 36px;
+    text-decoration: none;
+    text-transform: none;
+    min-width: auto;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 0;
+    padding: 0 24px;
+  }
+  .googlebtndisabled {
+    font-family: Roboto,Arial,sans-serif;
+    background-color: #cccccc;
+    margin-right: 14px;
+    color: #878787;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.141), 0 1px 3px 0 rgba(0,0,0,0.122);
+    -webkit-font-smoothing: antialiased;
+    transition: background .1s .05s;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .25px;
+    line-height: 36px;
+    text-decoration: none;
+    text-transform: none;
+    min-width: auto;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 0;
+    padding: 0 24px;
+  }
+  .submitForm {
+    display: inline-block;
+  }
+  .googlebtn:hover {
+    background-color: #f9f7fc;
+  }
+  .googlebtnsubmit {
+    font-family: Roboto,Arial,sans-serif;
+    background-color: rgb(103, 58, 183, 1);
+    margin-right: 14px;
+    color: #fff;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.141), 0 1px 3px 0 rgba(0,0,0,0.122);
+    -webkit-font-smoothing: antialiased;
+    transition: background .1s .05s;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .25px;
+    line-height: 36px;
+    text-decoration: none;
+    text-transform: none;
+    min-width: auto;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 0;
+    padding: 0 24px;
+  }
+  .googlebtnsubmit:hover {
+    background-color: #7349bc;
+  }
+  .googlebtn:focus {
+    /*background-color: #e4daf2;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    border: none;
+    border-style: none;*/
+  }
+  .btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0;
+    /*box-shadow: 0 0 0 0.2rem rgba(103, 58, 183, .25);*/
+  }
+  .required-msg {
+    color:rgb(217, 48, 37);
+    direction:ltr;
+    display:inline-block;
+    font-family:Roboto, Arial, sans-serif;
+    font-size:14px;
+    font-stretch:100%;
+    font-style:normal;
+    font-variant-caps:normal;
+    font-variant-east-asian:normal;
+    font-variant-ligatures:normal;
+    font-variant-numeric:normal;
+    font-weight:400;
+    height:24px;
+    letter-spacing:0.3px;
+    line-height:16px;
+    overflow-wrap:break-word;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    position:relative;
+    text-align:left;
+  }
+  .section-end {
+    /*margin-top: 48px;*/
+  }
+  .mcq-contrainer {
+    /*margin-bottom: 20px*/
+  }
+  .form-group {
+    margin-bottom: 0px;
+  }
+  .back-btn {
+    margin-right: 10px
+  }
+  .row {
+    width: 100%;
+  }
+  .btn-group {
+    width: 100%;
+  }
+  .turn {
+    /*font-weight: bold;
+    font-style: italic;
+    font-size: 14px;*/
+  }
+  .deepmoji {
+    margin-bottom: 20px;
+  }
+  .deepmoji, .emobert {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  .dialog-id, .question-title {
+    font-weight: bold;
+  }
+  .gold {
+    color: #feb236;
+  }
+  .correct-answer-div {
+    font-size: 14px;
+    font-weight: bold;
+    color: green;
+    margin-left: 15px
+  }
+  .wrong-answer-div {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(217, 48, 37);
+    margin-left: 15px
+  }
+  .reveal-answer-div {
+    font-size: 14px;
+    font-weight: bold;
+    color: green;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+  .gold-div {
+    margin-top: 10px
+  }
+  .tutorial-des .def {
+    font-weight: bold;
+  }
+  .modal-body .def {
+    font-weight: bold;
+  }
+  .def {
+    font-weight: bold;
+  }
+  .tutorial {
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: underline;
+  } 
+  .gold-options-div {
+    margin-left: 40px;
+    font-size: 14px;
+    padding: 10px;
+    background-color: #F5F5F5;
+    border: 1px solid #BEBEBE;
+    border-radius: 8px;
+    /*margin-bottom: 20px;*/
+  }
+  .turns .required-msg{
+    margin-left: 40px;
+  }
+  .gold-turns {
+    margin-bottom: 15px;
+  }
+  .gold-options-div .option-label{
+    font-size: 14px;
+  }
+  .gold-options-div .btn-container {
+    margin-top: 0px;
+    margin-left: 10px;
+  }
+  .gold-options-div .googlebtn {
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .gold-options-div .googlebtndisabled {
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .last-label {
+    color: #673ab7;
+    font-color: #673ab7;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .embed-tutorial {
+    margin-top: 20px;
+  }
+  .last-msg {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #d6f5d6;
+    border: 1px solid green;
+    border-radius: 8px;
+  }
+  .msgpane-correct {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #d6f5d6;
+    border: 1px solid green;
+    border-radius: 8px;
+    padding: 10px;
+    color: #155724;
+  }
+  .msgpane-correct-task {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 14px;
+    color: #43A047;
+    font-weight: bold;
+    font-size: 14px;
+    /*background: lightgreen;
+    padding: 10px;
+    border-radius: 10px;*/
+  }
+  .msgpane-wrong {
+    margin-top: 20px;
+    margin-bottom: -5px;
+    background-color: #f8d7da;
+    border: 1px solid red;
+    border-radius: 8px;
+    padding: 10px;
+    color: #721c24;
+  }
+  .msgpane-neutral {
+    margin-top: 20px;
+    margin-bottom: -5px;
+    background-color: #FFE0B2;
+    border: 1px solid #EF6C00;
+    border-radius: 8px;
+    padding: 10px;
+    color: #E65100;
+  }
+  .msgpane-wrong-task {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 14px;
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+    /*background: lightpink;
+    padding: 10px;
+    border-radius: 10px;*/
+  }
+  .task-span {
+    /*float: right;*/
+  }
+  .dashboard-span-wrong {
+    font-size: 12px;
+    font-weight: bold;
+    color: red;
+  }
+  .dashboard-span-finished {
+      font-size: 12px;
+      font-weight: bold;
+      color: #F57C00;
+  }
+  .dashboard-span-progress {
+      font-size: 12px;
+      font-weight: bold;
+      color: #673ab7;
+  }
+  .dashboard-span-taskproceeded {
+      font-size: 12px;
+      font-weight: bold;
+      color: #F48FB1;
+  }
+  .dashboard-span-right {
+    font-size: 12px;
+    font-weight: bold;
+    color: #4CAF50;
+  }
+  .info-table {
+    width: 100%;
+  }
+  .table-container {
+    max-height: 700px;
+    /*border: 1px solid red;*/
+    overflow: auto;
+  }
+
+  .examples-list {
+    line-height: 30px;
+    font-style: italic;
+  }
+
+  th {
+    position: sticky;
+    top: 0;
+    background: white;
+  }
+
+  .separator {
+    border: none;
+    height: 2px;
+    background-color: #f0f0f0;
+  }
+
+  .speaker-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #673ab7;
+    font-size: 16px;
+  }
+
+  .listener-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #0277BD;
+    font-size: 16px;
+    margin-left: 20%;
+  }
+
+  .emotion {
+    margin-bottom: 10px;
+  }
+
+  /*.situation-div {
+    padding: 10px;
+  }*/
+
+  .emotion-label {
+    padding: 4px 8px;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+
+  /*td {
+    text-align: center; 
+    vertical-align: middle;
+  }*/
+
+  .dashboard-table {
+    width: 100%;
+  }
+  .dashboard-tbody {
+    /*display: block;
+    height: 30px;       
+    overflow-y: auto;    
+    overflow-x: hidden;*/
+  }
+  .bold {
+    font-weight: bold;
+  }
+  .dial {
+    font-style: italic;
+    /*color: #000099;*/
+    color: rgb(103, 58, 183);
+    font-weight: 0;
+  }
+  .not-bold {
+    font-weight: 0;
+  }
+  .quiz {
+    color: gold;
+    font-weight: bold;
+  }
+
+  .bonusinfo {
+    /*color: gold;*/
+    color: #673ab7;
+  }
+
+  .validateinfo {
+    color: red;
+    font-weight: bold;
+    font-size: small;
+  }
+
+  #sortable1 {
+    border: 1px dashed #d4d6da;
+    background: #f9f9f9;
+    min-height: 100px;
+    list-style-type: none;
+    padding: 5px 0 0 0;
+    margin-top: 20px;
+  }
+  
+  .drop_area {
+      border: 1px dashed #d4d6da;
+      background: #f9f9f9;
+      min-height: 100px;
+      list-style-type: none;
+      padding: 5px 0 0 0;
+      margin-top: -5px;
+  }
+
+  .highlighted .drop_area {
+    box-shadow: inset 0 0 4px #00f;
+  }
+  
+  .drag_comp {
+      border: 1px solid #d4d6da;
+      margin: 0 5px 5px 5px;
+      padding: 5px;
+      background: #ffffff;
+      cursor: grab;
+      /*width: 100%;*/
+      /*max-width: 90vw;
+      width: 550px;*/
+      display: block;
+  }
+
+  .ddcontainer {
+    position: relative;
+    display: block;
+    cursor: move;
+  }
+
+  .drag_comp_real {
+    border: 1px solid #d4d6da;
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    cursor: grab;
+    /*width: 100%;*/
+    /*max-width: 90vw;
+    width: 550px;*/
+    background-color: #d9d9d9;
+  }
+
+  .drag_comp_real_correct {
+    border: 1px solid green;
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    cursor: grab;
+    /*width: 100%;*/
+    /*max-width: 90vw;
+    width: 550px;*/
+    background-color: #d6f5d6;
+  }
+
+  .drag_comp_real_wrong {
+    border: 1px solid red;
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    cursor: grab;
+    /*width: 100%;*/
+    /*max-width: 90vw;
+    width: 550px;*/
+    background-color: #f8d7da;
+  }
+
+  .highlighted .my_target {background-color: 'lightblue'}
+
+
+  .box_item_component {
+    width: 100%;
+  }
+
+  .box_item_component .outer {
+      border-top: none;
+      min-width: 140px;
+      max-width: 140px;
+      overflow: hidden;
+  }
+
+  .box_item_component .highlighted .outer {
+      border-top: 40px solid #ddd;
+  }
+
+  .box_item_component .item {
+      color: white;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 3px;
+      background-color: #005577;
+  }
+
+  .box_item_component .grabber {
+      font-size: 14px;
+      font-weight: bold;
+      padding-right: 6px;
+  }
+
+  .drag_things_to_boxes .component_box {
+      float: left;
+  }
+
+  .drag_things_to_boxes .box {
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 140px;
+    height: 276px;
+    margin: 10px 80px 0 0;
+    position: relative;
+  }
+
+  .drag_things_to_boxes .highlighted .box {
+    box-shadow: inset 0 0 4px #00f;
+  }
+
+  .drop_container {
+    background-color: pink;
+  }
+
+  #bubble-text-left {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 1.4em;
+  }
+
+  #bubble-text-right {
+    /*margin-top: 20px;*/
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 1.4em;
+  }
+
+  .speech-bubble-left {
+      position: relative;
+      background: #efe6ff;
+      border-radius: .4em;
+      min-height: 35px;
+      height: auto;
+      margin-left: 10px;
+      margin-top: 30px;
+      width: 75%;
+      color: black;
+  }
+
+  .speech-bubble-left:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-right-color: #efe6ff;
+      border-left: 0;
+      border-bottom: 0;
+      margin-top: -10px;
+      margin-left: -10px;
+  }
+
+  .rephrased {
+
+      position: relative;
+      background: #ededed;
+      border-radius: .4em;
+      min-height: 35px;
+      height: auto;
+      margin-right: 20px;
+      /*margin-top: 30px;*/
+      width: 75%;
+      /*color: #efe6ff;*/
+      /*border-right-color: red;*/
+  }
+
+  .speech-bubble-right {
+
+      position: relative;
+      background: #ededed;
+      border-radius: .4em;
+      min-height: 35px;
+      height: auto;
+      margin-right: 20px;
+      /*margin-top: 30px;*/
+      width: 75%;
+      /*color: #efe6ff;*/
+      /*border-right-color: red;*/
+  }
+
+  .speech-bubble-right:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-left-color: #ededed;
+      border-right: 0;
+      border-bottom: 0;
+      margin-top: -10px;
+      margin-right: -10px;
+  }
+
+  .bonusv {
+    margin-top: 5px;
+  }
+
+  .bonusvt {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .tut {
+    margin-top: 40px;
+  }
+
+  /*Dropdown-root react-drop is-open*/
+
+  /* .Dropdown-control {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: #333;
+    cursor: default;
+    outline: none;
+    padding: 8px 52px 8px 10px;
+    transition: all .2s ease;
+    background: green; can color change 
+  } */
+
+  .Dropdown-control {
+    cursor: pointer;
+  }
+
+  /* .Dropdown-placeholder {} */
+
+  /*.Dropdown-menu .Dropdown-group>.Dropdown-title {  Questions
+    padding: 8px 10px;
+    color: #333;
+    font-weight: 700;
+    text-transform: capitalize;
+  }*/
+
+  /*.Dropdown-option { Open Question
+    box-sizing: border-box;
+    color: rgba(51,51,51,.8);
+    cursor: pointer;
+    display: block;
+    padding: 8px 10px;
+  }*/
+
+  /*.Dropdown-option.is-selected, .Dropdown-option:hover { Open Question - is-selected, hover
+    background-color: #f2f9fc;
+    color: #333;
+  }*/
+
+  .react-drop {
+    /*width: 300px;*/
+    /*cursor: pointer;*/
+  }
+
+  /*.q {
+    background: yellow;
+    background-color: pink;
+  }*/
+
+  .oq {
+    background-color: #ffb74dff;
+  }
+
+  .oq.is-selected {
+      box-shadow: 0 0 10px 100px #ffb74dff inset;
+      border-style: solid;
+      border-color: lightslategray;
+  }
+
+  .oq:hover {
+      box-shadow: 0 0 10px 100px #ffb74dff inset;
+      border-style: solid;
+      border-color: lightslategray;
+  }
+
+  .cq {
+    background-color: #fb8c00ff;
+  }
+
+  .cq.is-selected {
+      box-shadow: 0 0 10px 100px #fb8c00ff inset;
+      border-style: solid;
+      border-color: lightslategray;
+  }
+
+  .cq:hover {
+      box-shadow: 0 0 10px 100px #fb8c00ff inset;
+      border-style: solid;
+      border-color: lightslategray;
+  }
+
+  .listenerdiv {
+    display: flex;
+
+  }
+
+  .listenertext {
+    width: 80%;
+  }
+
+  .listenerSelect {
+    width: 50%;
+  }
+
+  .tutorial-msg {
+    margin-top: 20px;
+    /*padding: 20px;*/
+    /*background-color: #d6f5d6;*/
+    border: 2px solid gray;
+    border-radius: 16px;
+  }
+
+  .tutorial-topic {
+    margin-top: 20px;
+  }
+
+  .tutorial-example {
+    font-style: italic;
+  }
+
+  .title-div {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .emotion-div {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .speaker-div {
+    background-color: #efe6ff;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    font-style: italic;
+    margin-bottom: 20px;
+    margin-right: 20%;
+  }
+
+  .listener-div {
+    background-color: #B3E5FC;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    font-style: italic;
+    margin-bottom: 20px;
+    margin-left: 20%;
+  }
+
+  .radio-div {
+    padding: 20px;
+    background: #f0f0f0;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .original-div {
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+  }
+
+  .original-text {
+    font-style: italic;
+    color: #673ab7;
+  }
+  .original {
+    vertical-align: top;
+    padding-right: 10px;
+    font-weight: bold;
+  }
+
+  .ratediv {
+    padding: 10px;
+    background: #ededed;
+    margin-bottom: 20px;
+    border-radius: 15px;
+
+  }
+
+  .text-div {
+    /*background: #efe6ff;*/
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+    /*position: relative;
+    background: #efe6ff;
+    border-radius: .4em;
+    min-height: 35px;
+    height: auto;
+    margin-left: 10px;
+    margin-top: 30px;
+    width: 75%;
+    color: black;*/
+  }
+
+  /*.advise-without {
+    padding-left: 10px;
+    color: #E91E63;
+    font-weight: bold;
+    vertical-align: top;
+    padding-top: 12px;
+  }*/
+
+  .phrases {
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  /*.advise-with {
+    color: #228B22;
+    font-weight: bold;
+    vertical-align: top;
+    padding-top: 12px;
+  }*/
+
+  .tutorial-strip {
+    padding: 10px;
+    width: 100%;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .tutorial-body {
+    padding: 20px;
+  }
+
+  select{
+    background: yellow !important;
+    color:green;
+    text-shadow:0 1px 0 orange;
+  }
+  option:not(:checked) { 
+      background-color: white; 
+      color:red;
+  }
+  textarea:focus,
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="week"]:focus,
+  input[type="number"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="color"]:focus,
+  .uneditable-input:focus {   
+    border-color: rgb(103, 58, 183, 0.2);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(103, 58, 183, 0.4);
+    outline: 0 none;
+  }
+</style>
